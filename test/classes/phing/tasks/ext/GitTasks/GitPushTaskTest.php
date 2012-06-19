@@ -114,6 +114,9 @@ class GitPushTaskTest extends BuildFileTest {
 
     public function testWrongRepo()
     {
+        $this->markTestSkipped(
+            'Altering the test repository is not possible.'
+        );
         $this->expectBuildExceptionContaining('wrongRepo', 
             'Repo dir is wrong',
             'You must specify readable directory as repository.');
@@ -121,6 +124,9 @@ class GitPushTaskTest extends BuildFileTest {
 
     public function testNoDestinationSpecified()
     {
+        $this->markTestSkipped(
+            'Altering the test repository is not possible.'
+        );
         $this->expectBuildExceptionContaining('noDestination', 
             'No source set',
             'At least one destination must be provided');
