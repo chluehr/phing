@@ -50,6 +50,10 @@ class GitPushTaskTest extends BuildFileTest {
 
     public function testAllParamsSet()
     {
+        $this->markTestSkipped(
+            'Altering the test repository is not possible.'
+        );
+
         $repository = PHING_TEST_BASE . '/tmp/git';
         $this->executeTarget('allParamsSet');
         $this->assertInLogs('git-push: pushing to origin master:foobranch');
@@ -58,6 +62,9 @@ class GitPushTaskTest extends BuildFileTest {
 
     public function testAllReposSet()
     {
+        $this->markTestSkipped(
+            'Altering the test repository is not possible.'
+        );
         $repository = PHING_TEST_BASE . '/tmp/git';
         $this->executeTarget('allReposSet');
         $this->assertInLogs('git-push: push to all refs');
@@ -66,6 +73,9 @@ class GitPushTaskTest extends BuildFileTest {
 
     public function testTagsSet()
     {
+        $this->markTestSkipped(
+            'Altering the test repository is not possible.'
+        );
         $repository = PHING_TEST_BASE . '/tmp/git';
         $this->executeTarget('tagsSet');
         $this->assertInLogs('git-push: pushing to origin master:foobranch');
@@ -74,6 +84,9 @@ class GitPushTaskTest extends BuildFileTest {
 
     public function testDeleteSet()
     {
+        $this->markTestSkipped(
+            'Altering the test repository is not possible.'
+        );
         $repository = PHING_TEST_BASE . '/tmp/git';
         $this->executeTarget('deleteSet');
         $this->assertInLogs('git-push: pushing to origin master:newbranch');
@@ -83,6 +96,9 @@ class GitPushTaskTest extends BuildFileTest {
 
     public function testMirrorSet()
     {
+        $this->markTestSkipped(
+            'Altering the test repository is not possible.'
+        );
         $repository = PHING_TEST_BASE . '/tmp/git';
         $this->executeTarget('mirrorSet');
         $this->assertInLogs('git-push: mirror all refs');
