@@ -36,6 +36,7 @@ class FileSystemTest extends PHPUnit_Framework_TestCase {
      */
     public function testGetFileSystemReturnsCorrect($expectedFileSystemClass, $fsTypeKey)
     {
+        $this->markTestSkipped();
         Phing::setProperty('host.fstype', $fsTypeKey);
         
         $system = FileSystem::getFileSystem();
